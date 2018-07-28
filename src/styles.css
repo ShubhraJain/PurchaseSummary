@@ -50,12 +50,10 @@ hr {
   font-weight: bold;
 }
 
-.tool-tip-modal {
+.tool-tip-text {
   display: none;
   position: absolute;
   z-index: -1;
-}
-.tool-tip-text {
   padding: 30px;
   font-size: 0.8rem;
   border: 1px solid var(--border-color);
@@ -64,9 +62,8 @@ hr {
 
 .show-tool-tip {
   display: block;
-  z-index: 10;
+  z-index: 1;
   background-color: #fff;
-  /* opacity: 1; */
 }
 
 .expander-hidden {

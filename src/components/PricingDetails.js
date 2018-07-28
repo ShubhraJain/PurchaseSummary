@@ -32,9 +32,9 @@ class PricingDetails extends Component {
           </div>
           <div className="breakdwn">
             <ToolTipText
-              text={"Pickup Savings"}
+              buttonText={"Pickup Savings"}
               toolTipText={
-                "Picking up your order in the store helps cut costs, and we pass the savings on to you."
+                <p>Picking up your order in the store helps cut costs, and we pass the savings on to you.</p>
               }
             />
             <p className="savings align-right">
@@ -42,7 +42,11 @@ class PricingDetails extends Component {
             </p>
           </div>
           <div className="breakdwn">
-            <p>Est. taxes & fees</p>
+            {/* <p>Est. taxes & fees</p> */}
+            <ToolTipText
+              buttonText={"Est. taxes & fees"}
+              toolTipText={<p>asdfasdf asdfasdf asdfsadf</p>}
+            />
             <p className="align-right">${this.totalTaxes().toFixed(2)}</p>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import findAncestor from "../utils";
 
 class ToolTipText extends Component {
   constructor(props) {
@@ -9,29 +10,26 @@ class ToolTipText extends Component {
   }
 
   addListner = (ev) => {
-    console.log("event listner called", ev.target);
-    const modal = document.getElementsByClassName("tool-tip-text")[0];
-    if (ev.target !== modal) {
+    const insideModal = findAncestor(ev.target, ".tool-tip-text") != null;
+    if (!insideModal) {
       this.hideToolTip();
     }
   };
 
   showToolTip = (ev) => {
-    console.log('show tool tip');
     this.setState({ isDisplayed: true });
     ev.stopPropagation();
     window.addEventListener("click", this.addListner);
   };
 
   hideToolTip = () => {
-    console.log('hide tooltip');
     this.setState({ isDisplayed: false });
     window.removeEventListener("click", this.addListner);
   };
 
 
   render() {
-    let tipClass = "tool-tip-modal";
+    let tipClass = "tool-tip-text";
     if (this.state.isDisplayed) {
       tipClass += " show-tool-tip";
     }
@@ -40,14 +38,11 @@ class ToolTipText extends Component {
         <button
           className="primary-btn"
           onClick={this.showToolTip}
-          // onBlur={this.handleBlur}
         >
-          {this.props.text}
+          {this.props.buttonText}
         </button>
         <div className={`${tipClass}`}>
-          <div className="tool-tip-text">
-            {this.props.toolTipText}
-          </div>
+          {this.props.toolTipText}
         </div>
       </div>
     );
