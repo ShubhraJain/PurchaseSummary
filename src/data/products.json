@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "sku": 85525,
+      "title": "OFM Essentials Racecar-Style Leather Gaming Chair, Multiple Colors",
+      "price": 102.96,
+      "pickUpAvailable": true,
+      "imageUrl": "https://i5.walmartimages.com/asr/58ed28c8-42fa-4966-902c-292940257bb1_1.ef2b733f30c41bfa79d99303e6a11627.jpeg?odnHeight=100&amp;odnWidth=100&amp;odnBg=FFFFFF",
+      "pickUpSavings": 3.85
+    },
+    {
+      "id": 1,
+      "sku": 85530,
+      "title": "Mead 1-Subject Wide Ruled Spiral Notebook",
+      "price": 8.99,
+      "pickUpAvailable": false,
+      "imageUrl": "https://i5.walmartimages.com/asr/ef01a0eb-9456-4d4b-9f74-c5329fe496ae_1.f5c023230345186370b73780a98115ca.jpeg?odnHeight=100&amp;odnWidth=100&amp;odnBg=FFFFFF",
+      "pickUpSavings": 0
+    }
+  ]
+}

@@ -1,2 +1,0 @@
-# PurchaseSummary
-Created with CodeSandbox

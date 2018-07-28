@@ -1,0 +1,143 @@
+:root {
+  --marginTopBottom: 5px;
+  --fontWeight: bold;
+  --fontColor: #9c9c9a;
+  --border-color: #e9e9e6;
+}
+
+.App {
+  font-family: sans-serif;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  width: 230px;
+}
+
+.price-details {
+  display: grid;
+}
+
+hr {
+  width: 100%;
+  background-color: var(--border-color);
+  height: 1px;
+  border: 0;
+}
+
+.breakdwn {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.breakdwn p,
+.breakdwn button {
+  margin: 7px;
+}
+.primary-btn {
+  text-decoration: underline;
+  border: 0;
+  font-size: 1rem;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.savings {
+  color: red;
+}
+
+.align-right {
+  justify-self: right;
+  font-weight: bold;
+}
+
+.tool-tip-text {
+  display: none;
+  padding: 30px;
+  position: absolute;
+  z-index: -1;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+  width: 170px;
+}
+
+.show-tool-tip {
+  display: block;
+  z-index: 10;
+  background-color: #fff;
+  /* opacity: 1; */
+}
+
+.expander-hidden {
+  display: none;
+}
+
+.details-container {
+  padding: 0;
+}
+
+.item-list {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.item-title {
+  margin: 0;
+}
+
+.item-img {
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+
+.item-details {
+  margin-left: 80px;
+  font-size: 0.8rem;
+}
+
+.final-price {
+  float: left;
+  margin-top: var(--marginTopBottom);
+  margin-bottom: var(--marginTopBottom);
+  font-weight: var(--fontWeight);
+  padding: 0;
+}
+
+.quantity {
+  float: right;
+  margin: var(--marginTopBottom);
+  font-size: 0.8rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  /* margin-top: var(--marginTopBottom);
+  margin-bottom: var(--marginTopBottom); */
+  font-weight: var(--fontWeight);
+  color: var(--fontColor);
+  /* padding: 0; */
+}
+
+.promo-details label {
+  color: var(--fontColor);
+  display: block;
+  margin-top: 20px;
+}
+
+.promo-details input,
+.promo-details button {
+  display: inline;
+}
+
+.promo-details input {
+  float: left;
+  height: 25px;
+}
+.promo-details button {
+  float: right;
+  border-radius: 20px;
+  font-size: 1rem;
+  padding: 5px;
+  border: 1px solid #000;
+  font-weight: bold;
+}
