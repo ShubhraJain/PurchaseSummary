@@ -50,11 +50,13 @@ hr {
   font-weight: bold;
 }
 
-.tool-tip-text {
+.tool-tip-modal {
   display: none;
-  padding: 30px;
   position: absolute;
   z-index: -1;
+}
+.tool-tip-text {
+  padding: 30px;
   font-size: 0.8rem;
   border: 1px solid var(--border-color);
   width: 170px;

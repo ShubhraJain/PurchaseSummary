@@ -7,48 +7,31 @@ class ToolTipText extends Component {
       isDisplayed: false
     };
   }
-  handleOutsideClick = ev => {
-    console.log("handleOutsideClick");
+
+  addListner = (ev) => {
+    console.log("event listner called", ev.target);
     const modal = document.getElementsByClassName("tool-tip-text")[0];
-    if (ev.target === modal) {
-      console.log(this);
+    if (ev.target !== modal) {
       this.hideToolTip();
     }
   };
 
-  componentDidMount = () => {
-    console.log("component did mount");
-    window.addEventListener("click", this.handleOutsideClick);
-    // this.handleOutsideClick();
-  };
-
-  toggleToolTip = () => {
-    console.log("changing display state");
-    this.setState(prevState => ({
-      isDisplayed: !prevState.isDisplayed
-    }));
-  };
-
-  showToolTip = () => {
+  showToolTip = (ev) => {
+    console.log('show tool tip');
     this.setState({ isDisplayed: true });
+    ev.stopPropagation();
+    window.addEventListener("click", this.addListner);
   };
+
   hideToolTip = () => {
+    console.log('hide tooltip');
     this.setState({ isDisplayed: false });
+    window.removeEventListener("click", this.addListner);
   };
 
-  handleBlur = e => {
-    console.log("Blur", e.target);
-    this.hideToolTip();
-  };
-  handleToolTipFocus = e => {
-    console.log("Focus", e.target);
-    this.showToolTip();
-  };
-
-  handleOutsideClick = () => {};
 
   render() {
-    let tipClass = "tool-tip-text";
+    let tipClass = "tool-tip-modal";
     if (this.state.isDisplayed) {
       tipClass += " show-tool-tip";
     }
@@ -56,12 +39,16 @@ class ToolTipText extends Component {
       <div className="tool-tip">
         <button
           className="primary-btn"
-          onClick={this.toggleToolTip}
+          onClick={this.showToolTip}
           // onBlur={this.handleBlur}
         >
-          Pickup savings
+          {this.props.text}
         </button>
-        <div className={`${tipClass}`}>{this.props.toolTipText}</div>
+        <div className={`${tipClass}`}>
+          <div className="tool-tip-text">
+            {this.props.toolTipText}
+          </div>
+        </div>
       </div>
     );
   }
