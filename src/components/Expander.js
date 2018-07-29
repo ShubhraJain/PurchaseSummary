@@ -13,11 +13,9 @@ class Expander extends React.Component {
   };
 
   render = () => {
-    let expanderClass = "expander-innercontent";
     let btnContent = this.props.expandedText;
     let expandSign = " -";
     if (!this.state.isExpanded) {
-      expanderClass += " expander-hidden";
       btnContent = this.props.unExpandedText;
       expandSign = " +";
     }
@@ -27,7 +25,7 @@ class Expander extends React.Component {
           <button className="primary-btn">{btnContent}</button>
           <span>{expandSign}</span>
         </span>
-        <div className={`${expanderClass}`}>{this.props.innerContent}</div>
+        {this.state.isExpanded && <div className="expander-innercontent">{this.props.innerContent}</div>}
       </div>
     );
   };

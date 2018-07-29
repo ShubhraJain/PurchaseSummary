@@ -31,7 +31,6 @@ class Promo extends React.Component {
   };
 }
 
-// const mapStateToProps = (state, action) => ({});
 const mapDispatchToProps = dispatch => {
   return {
     addDiscount: code => dispatch(PromoActions.addDiscount(code))
@@ -39,7 +38,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  // mapStateToProps,
-  null,
+  null, // mapStateToProps
   mapDispatchToProps
 )(Promo);
