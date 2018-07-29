@@ -54,10 +54,13 @@ class PricingDetails extends Component {
               -${this.totalPickUpSavings().toFixed(2)}
             </p>
           </div>
-          <div className="breakdwn">
-            <p>Discount</p>
-            <p className="align-right">${this.totalDiscount().toFixed(2)}</p>
-          </div>
+          {
+            this.props.discount > 0 &&
+            <div className="breakdwn">
+              <p>Discount</p>
+              <p className="align-right">${this.totalDiscount().toFixed(2)}</p>
+            </div>
+          }
           <div className="breakdwn">
             <p>Est. taxes & fees</p>
             <p className="align-right">${this.totalTaxes().toFixed(2)}</p>

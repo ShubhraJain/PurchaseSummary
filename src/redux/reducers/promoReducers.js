@@ -1,4 +1,4 @@
-import { ADD_DISCOUNT } from "../actions/promoActions";
+import { PromoActionTypes } from "../actions/promoActions";
 
 const initialState = {
   discount: 0,
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_DISCOUNT": {
+    case PromoActionTypes.ADD_DISCOUNT: {
       return Object.assign({}, state, {
         discount: state.discountCodes[action.payload] || 0
       });

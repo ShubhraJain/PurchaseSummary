@@ -5,7 +5,7 @@ export const PromoActionTypes = {
 export const PromoActions = {
   addDiscount: code => {
     return {
-      type: "ADD_DISCOUNT",
+      type: PromoActionTypes.ADD_DISCOUNT,
       payload: code
     };
   }

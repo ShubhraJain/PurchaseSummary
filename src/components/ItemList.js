@@ -9,7 +9,7 @@ class ItemList extends Component {
         <div className="item-details">
           <p className="item-title">{this.props.title}</p>
           <p className="final-price">${priceAfterPickUpSavings}</p>
-          <p className="quantity">Qty:</p>
+          <p className="quantity">Qty: 1</p>
           <p className="original-price">${this.props.price}</p>
         </div>
       );
@@ -18,7 +18,7 @@ class ItemList extends Component {
         <div className="item-details">
           <p className="item-title">{this.props.title}</p>
           <p className="final-price">${this.props.price}</p>
-          <p className="quantity">Qty:</p>
+          <p className="quantity">Qty: 1</p>
         </div>
       );
     }

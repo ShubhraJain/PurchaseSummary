@@ -14,11 +14,17 @@ class Promo extends React.Component {
     this.props.addDiscount(this.state.discountCode);
   };
 
+  handleInputChange = (ev) => {
+    this.setState(
+      { discountCode: ev.target.value }
+    );
+  }
+
   render = () => {
     return (
       <div className="promo-details">
         <label htmlFor="promo-input">Promo Code</label>
-        <input type="text" id="promo-input" value={this.state.discountCode} />
+        <input type="text" id="promo-input" value={this.state.discountCode} onChange={this.handleInputChange}/>
         <button onClick={this.clickHandler}>Apply</button>
       </div>
     );
