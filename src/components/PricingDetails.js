@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import ToolTipText from "./ToolTipText";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import ToolTipText from './ToolTipText';
 
 class PricingDetails extends Component {
   subTotalPrice = () => {
@@ -18,8 +19,17 @@ class PricingDetails extends Component {
     return this.subTotalPrice() / 10;
   };
 
+  totalDiscount = () => {
+    return (this.subTotalPrice() * this.props.discount) / 100;
+  };
+
   totalPrice = () => {
-    return this.subTotalPrice() + this.totalTaxes() - this.totalPickUpSavings();
+    return (
+      this.subTotalPrice() +
+      this.totalTaxes() -
+      this.totalDiscount() -
+      this.totalPickUpSavings()
+    );
   };
 
   render() {
@@ -32,9 +42,12 @@ class PricingDetails extends Component {
           </div>
           <div className="breakdwn">
             <ToolTipText
-              buttonText={"Pickup Savings"}
+              buttonText={'Pickup Savings'}
               toolTipText={
-                <p>Picking up your order in the store helps cut costs, and we pass the savings on to you.</p>
+                <p>
+                  Picking up your order in the store helps cut costs, and we
+                  pass the savings on to you.
+                </p>
               }
             />
             <p className="savings align-right">
@@ -42,11 +55,11 @@ class PricingDetails extends Component {
             </p>
           </div>
           <div className="breakdwn">
-            {/* <p>Est. taxes & fees</p> */}
-            <ToolTipText
-              buttonText={"Est. taxes & fees"}
-              toolTipText={<p>asdfasdf asdfasdf asdfsadf</p>}
-            />
+            <p>Discount</p>
+            <p className="align-right">${this.totalDiscount().toFixed(2)}</p>
+          </div>
+          <div className="breakdwn">
+            <p>Est. taxes & fees</p>
             <p className="align-right">${this.totalTaxes().toFixed(2)}</p>
           </div>
         </div>
@@ -60,4 +73,8 @@ class PricingDetails extends Component {
   }
 }
 
-export default PricingDetails;
+const mapStateToProps = state => ({
+  discount: state.discount
+});
+
+export default connect(mapStateToProps)(PricingDetails);

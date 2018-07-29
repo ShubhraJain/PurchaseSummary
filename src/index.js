@@ -1,24 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import data from "./data/products.json";
-import PurchaseSummary from "./components/PurchaseSummary";
-import "./styles.css";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import App from "./components/App";
+import store from "./redux/store";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: data.products
-    };
-  }
-  render = () => {
-    return (
-      <div className="App">
-        <PurchaseSummary products={this.state.products} />
-      </div>
-    );
-  };
-}
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);

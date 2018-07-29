@@ -1,17 +1,10 @@
-import React, { Component } from "react";
-import Expander from "./Expander";
-import PricingDetails from "./PricingDetails";
-import ItemDetails from "./ItemDetails";
-import Promo from "./Promo";
+import React, { Component } from 'react';
+import Expander from './Expander';
+import PricingDetails from './PricingDetails';
+import ItemDetails from './ItemDetails';
+import Promo from './Promo';
 
 class PurchaseSummary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isDisplayed: false
-    };
-  }
-
   renderDetailsComponent = () => {
     return <ItemDetails products={this.props.products} />;
   };
@@ -25,14 +18,14 @@ class PurchaseSummary extends Component {
       <div className="purchase-summary">
         <PricingDetails products={this.props.products} />
         <Expander
-          unExpandedText={"See items details"}
-          expandedText={"Hide items details"}
+          unExpandedText={'See items details'}
+          expandedText={'Hide items details'}
           innerContent={this.renderDetailsComponent()}
         />
         <hr />
         <Expander
-          unExpandedText={"Apply promo code"}
-          expandedText={"Hide promo code"}
+          unExpandedText={'Apply promo code'}
+          expandedText={'Hide promo code'}
           innerContent={this.renderPromoComponent()}
         />
       </div>

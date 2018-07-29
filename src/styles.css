@@ -54,7 +54,7 @@ hr {
   display: none;
   position: absolute;
   z-index: -1;
-  padding: 30px;
+  padding: 20px;
   font-size: 0.8rem;
   border: 1px solid var(--border-color);
   width: 170px;

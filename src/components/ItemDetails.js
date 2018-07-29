@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import ItemList from "./ItemList";
 
 class ItemDetails extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderItems = () => {
     return (
       <ul className="details-container">
