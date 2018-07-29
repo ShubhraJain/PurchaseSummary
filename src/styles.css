@@ -109,12 +109,9 @@ hr {
 
 .original-price {
   text-decoration: line-through;
-  /* margin-top: var(--marginTopBottom);
-  margin-bottom: var(--marginTopBottom); */
   font-weight: var(--fontWeight);
   color: var(--fontColor);
-  text-align: left;
-  /* padding: 0; */
+  clear: both;
 }
 
 .promo-details label {
